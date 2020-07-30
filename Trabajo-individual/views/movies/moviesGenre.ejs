@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas - <%= genero._rejectionHandler0.name %></title>
+</head>
+<body>
+ 
+    <h1>Todas las peliculas de <%= genero._rejectionHandler0.name %> que tenemos para vos:</h1>
+
+    <% for(let i = 0; i < peliculas.length; i++){ %>
+        <li><a href="/movies/detail/<%=peliculas[i].id%>"><%=peliculas[i].title%></a></li>
+    <% } %>
+</body>
+</html>

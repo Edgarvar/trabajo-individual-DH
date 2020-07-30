@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=actor.first_name%> <%=actor.last_name%></title>
+</head>
+<body>
+    <h1><%=actor.first_name%> <%=actor.last_name%></h1>
+    <ul>
+        <li>Rating: <%= actor.rating %>pts.</li>
+        <li>Pelicula favorita: <%= actor.movies[0].title %></li>
+    </ul>
+    
+
+</body>
+</html>

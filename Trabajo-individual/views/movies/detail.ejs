@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=pelicula.title%></title>
+</head>
+<body>
+    <h1><%= pelicula.title %></h1>
+    <ul>
+        <li>Rating: <%= pelicula.rating %>pts.</li>
+        <li>Duracion: <%= pelicula.length %> min.</li>
+        <li>Premios: <%= pelicula.awards %>.</li>
+        <% if(pelicula.genero != undefined){ %> 
+            <li>Genero: <a href="/movies/genero/<%= pelicula.genero.id%>"><%= pelicula.genero.name %></a></li>
+        <% } else {%>
+            <li>Genero: Sin genero definido.</li>
+        <% } %>
+        <li>Actores:</li>
+        <ul>
+            <% for(let j = 0; j < pelicula.actores.length; j++) {%>
+                <li><a href="/movies/actors/<%=pelicula.actores[j].id%>"><%= pelicula.actores[j].first_name %> <%=pelicula.actores[j].last_name%></a></li>
+            <% } %>
+        </ul>
+    </ul>
+    
+    <div>
+        <button><a href="/movies/edit/<%=pelicula.id%>">Editar</a></button>
+        <br>
+        <br>
+        <form action="/movies/delete/<%=pelicula.id%>?_method=DELETE" method="POST" >
+            <button type="submit">Eliminar</button>
+        </form>
+    </div>
+
+</body>
+</html>
